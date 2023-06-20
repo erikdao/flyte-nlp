@@ -28,7 +28,7 @@ RUN poetry config virtualenvs.create false
 RUN poetry install --no-dev
 
 # Test the code
-RUN poetry run python -c "from flyte_nlp import workflows"
+RUN poetry run python -c "from flyte_nlp.workflows.word2vec_and_lda import nlp_workflow"
 
 # This tag is supplied by the build script and will be used to determine the version
 # when registering tasks, workflows, and launch plans

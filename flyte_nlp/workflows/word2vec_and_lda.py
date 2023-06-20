@@ -52,6 +52,7 @@ SENTENCE_B = "Fast bowler received support from cricket captain"
 # Data Generation
 ##############################################################################
 
+
 def pre_processing(line: str) -> List[str]:
     tokenizer = RegexpTokenizer(r"\w+")
     tokens = tokenizer.tokenize(remove_stopwords(line.lower()))
@@ -118,7 +119,6 @@ class LDAModelHyperparams(object):
 def train_word2vec_model(
     training_data: List[List[str]], hyperparams: Word2VecModelHyperparams
 ) -> model_file:
-
     model = Word2Vec(
         training_data,
         min_count=hyperparams.min_count,
